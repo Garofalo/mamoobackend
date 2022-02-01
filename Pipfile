@@ -9,6 +9,9 @@ djangorestframework = "*"
 psycopg2-binary = "*"
 djangorestframework-simplejwt = "*"
 gunicorn = "*"
+whitenoise = "*"
+dj-database-url = "*"
+python-dotenv = "*"
 
 [dev-packages]
 

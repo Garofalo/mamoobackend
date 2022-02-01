@@ -7,6 +7,8 @@ from django.db.models.signals import post_save
 class Profile(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.name
 
 
 @receiver(post_save, sender=User)
@@ -27,3 +29,6 @@ class Mamoo(models.Model):
     what = models.TextField(max_length=1024)
     profile = models.ForeignKey(
         Profile, on_delete=models.CASCADE, related_name='mamoo')
+
+    def __str__(self):
+        return self.name

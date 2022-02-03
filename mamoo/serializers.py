@@ -4,7 +4,7 @@ from rest_framework import serializers
 
 
 class UserSerializer(serializers.ModelSerializer):
-    mamoo = serializers.StringRelatedField(many=True, required=False)
+    mamoo = serializers.PrimaryKeyRelatedField(many=True, required=False, queryset=Mamoo.objects.all())
     password = serializers.CharField(write_only=True)
 
 
@@ -28,4 +28,4 @@ class MamooSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Mamoo
-        fields = ('title','type','what', 'where', 'user')
+        fields = ('title','type','what', 'where', 'user', 'pk')

@@ -25,4 +25,4 @@ class MamooSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Mamoo
-        fields = '__all__'
+        fields = ('title','type','what', 'where', 'user')

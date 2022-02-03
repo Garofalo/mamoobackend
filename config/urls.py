@@ -14,7 +14,7 @@ router.register('mamoo', MamooList)
 urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
-    # path('token-auth/', TokenObtainPairView.as_view()),
+    # path('login/', TokenObtainPairView.as_view()),
     # path('refresh-token/', TokenRefreshView.as_view()),
     path('user/', UserList.as_view()),
     path('current_user/', current_user),

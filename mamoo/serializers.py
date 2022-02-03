@@ -1,24 +1,24 @@
-from .models import Profile, Mamoo
+from .models import  Mamoo
 from rest_framework import serializers
 from django.contrib.auth.models import User
 
 
 class UserSerializer(serializers.ModelSerializer):
-
+    mamoo = serializers.StringRelatedField(many=True)
     def create(self, validated_data):
         return User.objects.create_user(**validated_data)
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'password')
+        fields = ('username', 'password', 'mamoo')
 
 
-class ProfileSerializer(serializers.ModelSerializer):
-    mamoo = serializers.StringRelatedField(many=True)
+# class ProfileSerializer(serializers.ModelSerializer):
+#     mamoo = serializers.StringRelatedField(many=True)
 
-    class Meta:
-        model = Profile
-        fields = ('pk', 'mamoo', 'username')
+#     class Meta:
+#         model = Profile
+#         fields = ('pk', 'mamoo',)
 
 
 class MamooSerializer(serializers.ModelSerializer):

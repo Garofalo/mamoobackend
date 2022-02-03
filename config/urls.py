@@ -1,13 +1,13 @@
 from django.urls import include, path
 from rest_framework import routers
-from mamoo.views import MamooList, ProfileList, UserList
+from mamoo.views import MamooList, UserList
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from django.contrib import admin
 
 router = routers.DefaultRouter()
 
 router.register('mamoo', MamooList)
-router.register('profile', ProfileList)
+# router.register('profile', ProfileList)
 router.register('user', UserList)
 
 urlpatterns = [

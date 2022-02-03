@@ -13,16 +13,15 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ('id', 'username', 'password')
 
 
-class ProfileSerializer(serializers.HyperlinkedModelSerializer):
+class ProfileSerializer(serializers.ModelSerializer):
     mamoo = serializers.StringRelatedField(many=True)
 
     class Meta:
         model = Profile
-        
         fields = ('pk', 'mamoo', 'username')
 
 
-class MamooSerializer(serializers.HyperlinkedModelSerializer):
+class MamooSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Mamoo

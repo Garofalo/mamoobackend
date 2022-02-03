@@ -20,8 +20,8 @@ def create_user_profile(sender, instance, created, **kwargs):
 
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
-    instance.profile.save()
-# username=sender.username
+    instance.profile.save(username=sender.username)
+
 
 class Mamoo(models.Model):
     title = models.CharField(max_length=128)

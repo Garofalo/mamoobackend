@@ -3,7 +3,12 @@ from rest_framework import viewsets, permissions
 from .models import Mamoo 
 from .serializers import  UserSerializer, MamooSerializer, UserSerializerWithToken
 from django.contrib.auth.models import User
-
+from django.http import HttpResponseRedirect
+from rest_framework import permissions, status
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializers import UserSerializer, UserSerializerWithToken
 
 
 class MamooList(viewsets.ModelViewSet):
@@ -16,17 +21,11 @@ class MamooList(viewsets.ModelViewSet):
 #     serializer_class = ProfileSerializer
 #     permission_classes =[permissions.IsAuthenticatedOrReadOnly]
 
-class UserList(viewsets.ModelViewSet):
-    queryset= User.objects.all()
-    serializer_class = UserSerializer
+# class UserList(viewsets.ModelViewSet):
+#     queryset= User.objects.all()
+#     serializer_class = UserSerializer
 
-from django.http import HttpResponseRedirect
-from django.contrib.auth.models import User
-from rest_framework import permissions, status
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from rest_framework.views import APIView
-from .serializers import UserSerializer, UserSerializerWithToken
+
 
 
 @api_view(['GET'])

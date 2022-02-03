@@ -27,8 +27,8 @@ class Mamoo(models.Model):
     type = models.CharField(max_length=128)
     where = models.CharField(max_length=128)
     what = models.TextField(max_length=1024)
-    user = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='mamoo')
+    # user = models.ForeignKey(
+    #     User, on_delete=models.CASCADE, related_name='mamoo')
 
     def __str__(self):
         return self.title

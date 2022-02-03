@@ -33,7 +33,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'django-insecure-9iv3jqyu)@o)z0qu!epg+ie-h82d*c4-@lb7l335c_od!r-mj6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
 ALLOWED_HOSTS = ['localhost','mamoo-db.herokuapp.com']
 

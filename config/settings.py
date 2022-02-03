@@ -93,6 +93,9 @@ REST_FRAMEWORK = {
     )
     
 }
+JWT_AUTH = {
+    'JWT_RESPONSE_PAYLOAD_HANDLER': 'config.utils.my_jwt_response_handler'
+}
 
 WSGI_APPLICATION = 'config.wsgi.application'
 

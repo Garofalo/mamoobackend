@@ -31,4 +31,4 @@ class Mamoo(models.Model):
         Profile, on_delete=models.CASCADE, related_name='mamoo')
 
     def __str__(self):
-        return self.name
+        return self.title

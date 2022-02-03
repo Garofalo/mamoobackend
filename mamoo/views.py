@@ -14,7 +14,7 @@ class MamooList(viewsets.ModelViewSet):
 class ProfileList(viewsets.ModelViewSet):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
-    permission_classes =[permissions.IsAuthenticated]
+    permission_classes =[permissions.IsAuthenticatedOrReadOnly]
 
 class UserList(viewsets.ModelViewSet):
     queryset= User.objects.all()

@@ -15,6 +15,7 @@ from pathlib import Path
 import os
 import dj_database_url
 from dotenv import load_dotenv
+from rest_framework_simplejwt import authentication
 
 load_dotenv()
 IS_PRODUCTION = os.getenv('PRODUCTION') == 'yes'

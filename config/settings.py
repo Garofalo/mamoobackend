@@ -109,20 +109,20 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-if IS_PRODUCTION == 'yes':
-    DATABASES = {
+# if IS_PRODUCTION == 'yes':
+DATABASES = {
     'default' : dj_database_url.config(conn_max_age=600, ssl_require=True)
     }
-else:
-    DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mamoo',
-        'USER': 'mamoo_admin',
-        'PASSWORD': 'password',
-        'HOST': 'localhost'
-    }
-}
+# else:
+#     DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'mamoo',
+#         'USER': 'mamoo_admin',
+#         'PASSWORD': 'password',
+#         'HOST': 'localhost'
+#     }
+# }
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 

@@ -19,7 +19,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 IS_PRODUCTION = os.getenv('PRODUCTION') == 'yes'
-
+SECRET_KEY = os.getenv('SECRET_KEY')
+MAMOOURL = os.getenv('MAMOOURL')
 if IS_PRODUCTION:
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -31,16 +32,20 @@ AUTH_USER_MODEL = 'mamoo.CustomUser'
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-9iv3jqyu)@o)z0qu!epg+ie-h82d*c4-@lb7l335c_od!r-mj6'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if IS_PRODUCTION:
 
-ALLOWED_HOSTS = ['localhost','*',  '127.0.0.1',]
+    DEBUG = False
+else:
+    DEBUG= True
+
+ALLOWED_HOSTS = ['localhost',MAMOOURL,  '127.0.0.1',]
 
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
+    "http://localhost:3000", MAMOOURL
 ]
 # CORS_ORIGIN_WHITELIST = (
 #     'http://localhost:3000',

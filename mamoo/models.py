@@ -8,8 +8,8 @@ class CustomUser(AbstractUser):
 class Mamoo(models.Model):
     title = models.CharField(max_length=128)
     type = models.CharField(max_length=128)
-    where = models.CharField(max_length=128)
-    what = models.TextField(max_length=1024)
+    where = models.CharField(max_length=128, blank=True)
+    what = models.TextField(max_length=1024, blank=True)
     when = models.IntegerField()
     user = models.ForeignKey(
         CustomUser, on_delete=models.CASCADE, related_name='mamoo')

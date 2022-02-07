@@ -41,11 +41,11 @@ if IS_PRODUCTION:
 else:
     DEBUG= True
 
-ALLOWED_HOSTS = ['localhost',MAMOOURL,  '127.0.0.1',]
+ALLOWED_HOSTS = ['localhost', MAMOOURL,  '127.0.0.1',]
 
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000", MAMOOURL
+    "http://localhost:3000", "yourmamoo.netlify.app"
 ]
 # CORS_ORIGIN_WHITELIST = (
 #     'http://localhost:3000',

@@ -21,6 +21,7 @@ load_dotenv()
 IS_PRODUCTION = os.getenv('PRODUCTION') == 'yes'
 SECRET_KEY = os.getenv('SECRET_KEY')
 MAMOOURL = os.getenv('MAMOOURL')
+DATABASE_URL = os.getenv('DATABASE_URL')
 if IS_PRODUCTION:
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -36,7 +37,6 @@ AUTH_USER_MODEL = 'mamoo.CustomUser'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if IS_PRODUCTION:
-
     DEBUG = False
 else:
     DEBUG= True
@@ -47,10 +47,7 @@ CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000", "yourmamoo.netlify.app"
 ]
-# CORS_ORIGIN_WHITELIST = (
-#     'http://localhost:3000',
-# )
-# Application definition
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -63,6 +60,7 @@ INSTALLED_APPS = [
     'mamoo',
     'rest_framework_simplejwt',
     "corsheaders",
+    "dj_database_url"
 ]
 
 MIDDLEWARE = [

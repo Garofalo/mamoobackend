@@ -18,11 +18,13 @@ import dj_database_url
 from dotenv import load_dotenv
 
 load_dotenv()
-IS_PRODUCTION = os.getenv('PRODUCTION') == 'yes'
+
+IS_PRODUCTION = os.getenv('PRODUCTION') 
 SECRET_KEY = os.getenv('SECRET_KEY')
 MAMOOURL = os.getenv('MAMOOURL')
 DATABASE_URL = os.getenv('DATABASE_URL')
-if IS_PRODUCTION:
+
+if IS_PRODUCTION == 'yes':
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 else:
@@ -36,7 +38,7 @@ AUTH_USER_MODEL = 'mamoo.CustomUser'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if IS_PRODUCTION:
+if IS_PRODUCTION == 'yes':
     DEBUG = False
 else:
     DEBUG= True
@@ -107,7 +109,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-if IS_PRODUCTION:
+if IS_PRODUCTION == 'yes':
     DATABASES = {
     'default' : dj_database_url.config(conn_max_age=600, ssl_require=True)
     }
@@ -154,7 +156,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
-if IS_PRODUCTION:
+if IS_PRODUCTION == 'yes':
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATIC_URL = '/static/'
     STATICFILES_DIRS = (
